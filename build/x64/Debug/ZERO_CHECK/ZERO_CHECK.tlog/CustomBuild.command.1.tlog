@@ -1,0 +1,10 @@
+^F:\GITHUB\REPOSITORIES\CHIP8\BUILD\CMAKEFILES\E4BDB248C381276FC444F4AB9497F9B4\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SF:/GitHub/Repositories/CHIP8 -BF:/GitHub/Repositories/CHIP8/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file F:/GitHub/Repositories/CHIP8/build/CHIP8Emulator.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,6 @@
+{
+    "debug.onTaskErrors": "abort",
+    "debug.saveBeforeStart": "allEditorsInActiveGroup",
+    "task.saveBeforeRun": "always",
+    "terminal.integrated.focusAfterRun": "terminal"
+}
