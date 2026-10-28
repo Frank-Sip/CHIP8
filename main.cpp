@@ -1,8 +1,9 @@
 #include <SDL3/SDL.h>
 #include <iostream>
 #include "Logger.h"
+#include "cmdLineParser.h"
 
-int main()
+int main(int argc, char** argv)
 {
     if (!SDL_Init(SDL_INIT_VIDEO))
     {
@@ -21,6 +22,31 @@ int main()
 
     bool running = true;
 
+    std::shared_ptr<Logger> logger = Logger::GetInstance();
+
+    CMDLineParser parser;
+    parser.Parse(argc, argv);
+
+    if (parser.IsLogLevelSet())
+    {
+        switch (parser.GetLogLevel())
+        {
+            case 0: logger->SetLogLevel(ELogLevel::NONE); break;
+            case 1: logger->SetLogLevel(ELogLevel::INFO); break;
+            case 2: logger->SetLogLevel(ELogLevel::ERROR); break;
+            case 3: logger->SetLogLevel(ELogLevel::WARNING); break;
+            case 4: logger->SetLogLevel(ELogLevel::DEBUG); break;
+        }
+    }
+
+    if (!parser.IsRomFileNameSet())
+    {
+        logger->Log("Error: ROM file name not set. Use -r or --rom-file-name to specify the ROM file.", ELogLevel::ERROR);
+        exit(1);
+    }
+
+    logger->Log("Rom path: " + parser.GetRomFileName(), ELogLevel::INFO);
+
     while (running)
     {
         SDL_Event event;
@@ -36,12 +62,6 @@ int main()
         SDL_Delay(16);
 
     }
-    std::shared_ptr<Logger> logger = Logger::GetInstance();
-
-    logger->Log("INFORMATION", ELogLevel::INFO);
-    logger->Log("WARNING", ELogLevel::WARNING);
-    logger->Log("ERROR", ELogLevel::ERROR);
-    logger->Log("DEBUG", ELogLevel::DEBUG);
 
     SDL_DestroyWindow(window);
     SDL_Quit();

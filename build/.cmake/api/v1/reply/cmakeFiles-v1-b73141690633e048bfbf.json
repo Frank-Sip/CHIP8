@@ -1229,7 +1229,8 @@
 			"expression" : "F:/GitHub/Repositories/CHIP8/src/*.cpp",
 			"paths" : 
 			[
-				"F:/GitHub/Repositories/CHIP8/src/Logger.cpp"
+				"F:/GitHub/Repositories/CHIP8/src/Logger.cpp",
+				"F:/GitHub/Repositories/CHIP8/src/cmdLineParser.cpp"
 			],
 			"recurse" : true
 		}

@@ -7,6 +7,9 @@
     <ClCompile Include="F:\GitHub\Repositories\CHIP8\src\Logger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="F:\GitHub\Repositories\CHIP8\src\cmdLineParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="F:\GitHub\Repositories\CHIP8\CMakeLists.txt" />
