@@ -1,0 +1,11 @@
+================================================================================
+Linker Errors
+Generated: 2026-10-28T20:05:47.743Z
+Total Errors: 2
+================================================================================
+
+[LNK2019] (MSVC)
+unresolved external symbol "public: static class std::shared_ptr<class Logger> __cdecl Logger::GetInstance(void)" (?GetInstance@Logger@@SA?AV?$shared_ptr@VLogger@@@std@@XZ) referenced in function main [F:\GitHub\Repositories\CHIP8\build\CHIP8Emulator.vcxproj]
+
+[LNK1120] (MSVC)
+1 unresolved externals [F:\GitHub\Repositories\CHIP8\build\CHIP8Emulator.vcxproj]

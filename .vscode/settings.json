@@ -2,5 +2,6 @@
     "debug.onTaskErrors": "abort",
     "debug.saveBeforeStart": "allEditorsInActiveGroup",
     "task.saveBeforeRun": "always",
-    "terminal.integrated.focusAfterRun": "terminal"
+    "terminal.integrated.focusAfterRun": "terminal",
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools"
 }

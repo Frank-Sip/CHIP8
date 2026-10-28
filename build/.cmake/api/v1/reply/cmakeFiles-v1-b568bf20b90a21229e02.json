@@ -1224,6 +1224,14 @@
 				"F:/GitHub/Repositories/CHIP8/SDL/src/video/yuv2rgb/yuv_rgb_std.h",
 				"F:/GitHub/Repositories/CHIP8/SDL/src/video/yuv2rgb/yuv_rgb_std_func.h"
 			]
+		},
+		{
+			"expression" : "F:/GitHub/Repositories/CHIP8/src/*.cpp",
+			"paths" : 
+			[
+				"F:/GitHub/Repositories/CHIP8/src/Logger.cpp"
+			],
+			"recurse" : true
 		}
 	],
 	"inputs" : 

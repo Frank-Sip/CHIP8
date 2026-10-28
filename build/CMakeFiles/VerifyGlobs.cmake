@@ -1461,3 +1461,13 @@ if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
   file(TOUCH_NOCREATE "F:/GitHub/Repositories/CHIP8/build/CMakeFiles/cmake.verify_globs")
 endif()
+
+# SOURCES at CMakeLists.txt:12 (file)
+file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "F:/GitHub/Repositories/CHIP8/src/*.cpp")
+set(OLD_GLOB
+  "F:/GitHub/Repositories/CHIP8/src/Logger.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "F:/GitHub/Repositories/CHIP8/build/CMakeFiles/cmake.verify_globs")
+endif()

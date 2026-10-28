@@ -1,12 +1,12 @@
 #include <SDL3/SDL.h>
 #include <iostream>
+#include "Logger.h"
 
 int main()
 {
     if (!SDL_Init(SDL_INIT_VIDEO))
     {
-        std::cerr << "SDL initialization failed: "
-                  << SDL_GetError() << '\n';
+        std::cerr << "SDL initialization failed: " << SDL_GetError() << '\n';
         return 1;
     }
 
@@ -34,7 +34,14 @@ int main()
         }
 
         SDL_Delay(16);
+
     }
+    std::shared_ptr<Logger> logger = Logger::GetInstance();
+
+    logger->Log("INFORMATION", ELogLevel::INFO);
+    logger->Log("WARNING", ELogLevel::WARNING);
+    logger->Log("ERROR", ELogLevel::ERROR);
+    logger->Log("DEBUG", ELogLevel::DEBUG);
 
     SDL_DestroyWindow(window);
     SDL_Quit();

@@ -91,21 +91,21 @@
 				{
 					"directoryIndex" : 1,
 					"id" : "ALL_BUILD::@e7c329919722962a2ad4",
-					"jsonFile" : "target-ALL_BUILD-Debug-99f117accb4377d793d4.json",
+					"jsonFile" : "target-ALL_BUILD-Debug-0eaf1dd4c572a556cffe.json",
 					"name" : "ALL_BUILD",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "CHIP8Emulator::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-CHIP8Emulator-Debug-ec23e569abee944411df.json",
+					"jsonFile" : "target-CHIP8Emulator-Debug-c9b8adc083e0e856e30e.json",
 					"name" : "CHIP8Emulator",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 1,
 					"id" : "SDL3-shared::@e7c329919722962a2ad4",
-					"jsonFile" : "target-SDL3-shared-Debug-9c9d9bc498688c3ed933.json",
+					"jsonFile" : "target-SDL3-shared-Debug-60dbf95b3642f72d8f91.json",
 					"name" : "SDL3-shared",
 					"projectIndex" : 1
 				},
@@ -222,21 +222,21 @@
 				{
 					"directoryIndex" : 1,
 					"id" : "ALL_BUILD::@e7c329919722962a2ad4",
-					"jsonFile" : "target-ALL_BUILD-Release-99f117accb4377d793d4.json",
+					"jsonFile" : "target-ALL_BUILD-Release-0eaf1dd4c572a556cffe.json",
 					"name" : "ALL_BUILD",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "CHIP8Emulator::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-CHIP8Emulator-Release-88a063eef1802831f823.json",
+					"jsonFile" : "target-CHIP8Emulator-Release-710ddb9d1b9e84966185.json",
 					"name" : "CHIP8Emulator",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 1,
 					"id" : "SDL3-shared::@e7c329919722962a2ad4",
-					"jsonFile" : "target-SDL3-shared-Release-4172beaa048c41eea629.json",
+					"jsonFile" : "target-SDL3-shared-Release-9f0bb530e737a6fa801d.json",
 					"name" : "SDL3-shared",
 					"projectIndex" : 1
 				},
@@ -353,21 +353,21 @@
 				{
 					"directoryIndex" : 1,
 					"id" : "ALL_BUILD::@e7c329919722962a2ad4",
-					"jsonFile" : "target-ALL_BUILD-MinSizeRel-99f117accb4377d793d4.json",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-0eaf1dd4c572a556cffe.json",
 					"name" : "ALL_BUILD",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "CHIP8Emulator::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-CHIP8Emulator-MinSizeRel-88f188c6fa45e587a164.json",
+					"jsonFile" : "target-CHIP8Emulator-MinSizeRel-501c54fbd7a7ba02f181.json",
 					"name" : "CHIP8Emulator",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 1,
 					"id" : "SDL3-shared::@e7c329919722962a2ad4",
-					"jsonFile" : "target-SDL3-shared-MinSizeRel-121cd2b4035f0f5694ac.json",
+					"jsonFile" : "target-SDL3-shared-MinSizeRel-a8e536f21dd14f32dbc4.json",
 					"name" : "SDL3-shared",
 					"projectIndex" : 1
 				},
@@ -484,21 +484,21 @@
 				{
 					"directoryIndex" : 1,
 					"id" : "ALL_BUILD::@e7c329919722962a2ad4",
-					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-99f117accb4377d793d4.json",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-0eaf1dd4c572a556cffe.json",
 					"name" : "ALL_BUILD",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "CHIP8Emulator::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-CHIP8Emulator-RelWithDebInfo-d7b761889a01f674cc17.json",
+					"jsonFile" : "target-CHIP8Emulator-RelWithDebInfo-d2a0755c5bcdafdfd34e.json",
 					"name" : "CHIP8Emulator",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 1,
 					"id" : "SDL3-shared::@e7c329919722962a2ad4",
-					"jsonFile" : "target-SDL3-shared-RelWithDebInfo-081b61319122aa3bc4f1.json",
+					"jsonFile" : "target-SDL3-shared-RelWithDebInfo-449ae33521b05a8ad82d.json",
 					"name" : "SDL3-shared",
 					"projectIndex" : 1
 				},
