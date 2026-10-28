@@ -9,8 +9,8 @@ enum class ELogLevel
 {
     NONE,
     INFO,
-    WARNING,
     ERROR,
+    WARNING,
     DEBUG
 };
 

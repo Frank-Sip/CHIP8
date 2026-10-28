@@ -7,7 +7,11 @@ Logger::Logger() : m_logLevel(ELogLevel::DEBUG) {}
 
 std::shared_ptr<Logger> Logger::GetInstance()
 {
-    m_instance = std::make_shared<Logger>();
+    if (m_instance == nullptr)
+    {
+        m_instance = std::make_shared<Logger>();
+    }
+
     return m_instance;
 }
 
@@ -42,6 +46,6 @@ void Logger::Log(std::string message, ELogLevel level)
             break;
     }
 
-    buf += message + "\n";
+    buf += message + "\033[0m\n";
     std::cout << buf;
 }
