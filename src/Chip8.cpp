@@ -1,9 +1,10 @@
 #include "Chip8.h"
-#include "Logger.h"
+#include "CPU.h"
 
 Chip8::Chip8()
 {
     m_logger = Logger::GetInstance();
+    m_cpu = new CPU(this);
     m_emulatorRunning = false;
 }
 
@@ -46,10 +47,23 @@ void Chip8::Init(std::string rom_path)
 
     m_keyPressed = false;
 
+    m_cpu->Init();
+
     m_loader = new RomLoader();
     m_loader->LoadRom(rom_path, m_ram + PROGRAM_START_ADDRESS);
     delete m_loader;
 }
 
-void Chip8::Run() {}
-void Chip8::Deinit() {}
+void Chip8::Run()
+{
+    while (m_emulatorRunning)
+    {
+        m_cpu->Fetch();
+        m_cpu->Decode();
+        m_cpu->Execute();
+    }
+}
+void Chip8::Deinit()
+{
+    m_cpu->Init();
+}

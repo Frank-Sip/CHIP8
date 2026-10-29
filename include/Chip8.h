@@ -44,6 +44,7 @@ class CPU;
 class Chip8
 {
     friend class CPU;
+    CPU* m_cpu;
 
     //Screen
     uint8_t m_screen[SCREEN_HEIGHT][SCREEN_WIDTH];

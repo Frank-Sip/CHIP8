@@ -4,6 +4,9 @@
     <ClCompile Include="F:\GitHub\Repositories\CHIP8\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="F:\GitHub\Repositories\CHIP8\src\CPU.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="F:\GitHub\Repositories\CHIP8\src\Chip8.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
