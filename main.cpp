@@ -27,7 +27,6 @@ int main(int argc, char** argv)
     if (!parser.IsRomFileNameSet())
     {
         logger->Log("ROM file name not set. Use -r or --rom-file-name to specify the ROM file.", ELogLevel::ERROR);
-
         return 1;
     }
 

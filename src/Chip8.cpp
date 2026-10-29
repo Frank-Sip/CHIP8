@@ -1,11 +1,15 @@
 #include "Chip8.h"
 #include "CPU.h"
 
+#include <ctime>
+#include <chrono>
+#include <thread>
+
 Chip8::Chip8()
 {
     m_logger = Logger::GetInstance();
     m_cpu = new CPU(this);
-    m_emulatorRunning = false;
+    m_emulatorRunning = true;
     m_display = nullptr;
 }
 
@@ -59,14 +63,49 @@ void Chip8::Init(std::string rom_path)
 
 void Chip8::Run()
 {
+    using clock = std::chrono::high_resolution_clock;
+    clock::time_point start, end;
+    const std::chrono::milliseconds desired_cycle_time(1);
+
+    int display_update_delat_time = 0;
+
     while (m_emulatorRunning)
     {
+        start = clock::now();
+        
         m_cpu->Fetch();
         m_cpu->Decode();
         m_cpu->Execute();
 
-        m_display->Draw(m_screen, SCREEN_WIDTH, SCREEN_HEIGHT);
-        m_display->Update();
+        if (display_update_delat_time >= 20)
+        {
+            display_update_delat_time = 0;
+            m_display->Draw(m_screen, SCREEN_WIDTH, SCREEN_HEIGHT);
+            m_display->Update();
+
+            if (m_delay_timer > 0)
+            {
+                m_delay_timer--;
+            }
+
+            if (m_sound_timer > 0)
+            {
+                m_sound_timer--;
+            }
+        }
+
+        end = clock::now();
+
+        std::chrono::duration<double, std::milli> loop_time = end - start;
+        auto elapsed_time = std::chrono::duration_cast<std::chrono::milliseconds>(loop_time);
+        auto sleep_time = desired_cycle_time - elapsed_time;
+
+        if (sleep_time.count() > 0)
+        {
+            std::this_thread::sleep_for(sleep_time);
+        }
+
+        display_update_delat_time++;
     }
 }
 void Chip8::Deinit()
