@@ -2,8 +2,10 @@
 #define CHIP8_H
 
 #include <cstdint>
+
 #include "Logger.h"
 #include "RomLoader.h"
+#include "Display.h"
 
 #define NUM_KEYS 16
 #define TOTAL_RAM 4096
@@ -63,6 +65,7 @@ class Chip8
     bool m_emulatorRunning;
     std::shared_ptr<Logger> m_logger;
     RomLoader* m_loader;
+    Display* m_display;
 
 public:
     Chip8();
@@ -71,6 +74,8 @@ public:
     void Init(std::string rom_path);
     void Run();
     void Deinit();
+
+    void SetDisplay(Display* display);
 };
 
 #endif

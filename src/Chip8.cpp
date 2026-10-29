@@ -6,6 +6,7 @@ Chip8::Chip8()
     m_logger = Logger::GetInstance();
     m_cpu = new CPU(this);
     m_emulatorRunning = false;
+    m_display = nullptr;
 }
 
 Chip8::~Chip8() {}
@@ -52,6 +53,8 @@ void Chip8::Init(std::string rom_path)
     m_loader = new RomLoader();
     m_loader->LoadRom(rom_path, m_ram + PROGRAM_START_ADDRESS);
     delete m_loader;
+
+    m_display->Init();
 }
 
 void Chip8::Run()
@@ -61,9 +64,18 @@ void Chip8::Run()
         m_cpu->Fetch();
         m_cpu->Decode();
         m_cpu->Execute();
+
+        m_display->Draw(m_screen, SCREEN_WIDTH, SCREEN_HEIGHT);
+        m_display->Update();
     }
 }
 void Chip8::Deinit()
 {
     m_cpu->Init();
+    m_display->Deinit();
+}
+
+void Chip8::SetDisplay(Display* display)
+{
+    m_display = display;
 }

@@ -3,4 +3,5 @@ F:\GitHub\Repositories\CHIP8\src\CPU.cpp;F:\GitHub\Repositories\CHIP8\build\CHIP
 F:\GitHub\Repositories\CHIP8\src\Chip8.cpp;F:\GitHub\Repositories\CHIP8\build\CHIP8Emulator.dir\Debug\Chip8.obj
 F:\GitHub\Repositories\CHIP8\src\Logger.cpp;F:\GitHub\Repositories\CHIP8\build\CHIP8Emulator.dir\Debug\Logger.obj
 F:\GitHub\Repositories\CHIP8\src\RomLoader.cpp;F:\GitHub\Repositories\CHIP8\build\CHIP8Emulator.dir\Debug\RomLoader.obj
+F:\GitHub\Repositories\CHIP8\src\SDLDisplay.cpp;F:\GitHub\Repositories\CHIP8\build\CHIP8Emulator.dir\Debug\SDLDisplay.obj
 F:\GitHub\Repositories\CHIP8\src\cmdLineParser.cpp;F:\GitHub\Repositories\CHIP8\build\CHIP8Emulator.dir\Debug\cmdLineParser.obj

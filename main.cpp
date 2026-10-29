@@ -1,9 +1,9 @@
 #include <SDL3/SDL.h>
 #include <iostream>
 
-#include "Logger.h"
 #include "cmdLineParser.h"
 #include "Chip8.h"
+#include "SDLDisplay.h"
 
 int main(int argc, char** argv)
 {
@@ -26,28 +26,23 @@ int main(int argc, char** argv)
    
     if (!parser.IsRomFileNameSet())
     {
-        logger->Log(
-            "ROM file name not set. Use -r or --rom-file-name to specify the ROM file.",
-            ELogLevel::ERROR
-        );
+        logger->Log("ROM file name not set. Use -r or --rom-file-name to specify the ROM file.", ELogLevel::ERROR);
 
         return 1;
     }
 
     logger->Log("ROM path: " + parser.GetRomFileName(), ELogLevel::INFO);
-
+    
+    DisplaySDL display;
     Chip8 emulator;
+    emulator.SetDisplay(&display);
     emulator.Init(parser.GetRomFileName());
     emulator.Run();
     emulator.Deinit();
 
     if (!SDL_Init(SDL_INIT_VIDEO))
     {
-        logger->Log(
-            "SDL initialization failed: " + std::string(SDL_GetError()),
-            ELogLevel::ERROR
-        );
-
+        logger->Log("SDL initialization failed: " + std::string(SDL_GetError()), ELogLevel::ERROR);
         return 1;
     }
     
@@ -55,11 +50,7 @@ int main(int argc, char** argv)
 
     if (!window)
     {
-        logger->Log(
-            "Window creation failed: " + std::string(SDL_GetError()),
-            ELogLevel::ERROR
-        );
-
+        logger->Log("Window creation failed: " + std::string(SDL_GetError()), ELogLevel::ERROR);
         SDL_Quit();
         return 1;
     }

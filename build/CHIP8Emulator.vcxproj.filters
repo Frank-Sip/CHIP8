@@ -16,6 +16,9 @@
     <ClCompile Include="F:\GitHub\Repositories\CHIP8\src\RomLoader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="F:\GitHub\Repositories\CHIP8\src\SDLDisplay.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="F:\GitHub\Repositories\CHIP8\src\cmdLineParser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
