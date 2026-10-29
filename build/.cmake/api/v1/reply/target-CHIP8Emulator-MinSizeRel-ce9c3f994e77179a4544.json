@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Debug/CHIP8Emulator.exe"
+			"path" : "MinSizeRel/CHIP8Emulator.exe"
 		},
 		{
-			"path" : "Debug/CHIP8Emulator.pdb"
+			"path" : "MinSizeRel/CHIP8Emulator.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -59,7 +59,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++20 -MDd"
+					"fragment" : "/DWIN32 /D_WINDOWS /EHsc /O1 /Ob1 /DNDEBUG -std:c++20 -MD"
 				}
 			],
 			"includes" : 
@@ -90,7 +90,9 @@
 			[
 				0,
 				1,
-				2
+				2,
+				3,
+				4
 			]
 		}
 	],
@@ -110,16 +112,16 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "/DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd",
+				"fragment" : "/DWIN32 /D_WINDOWS /EHsc /O1 /Ob1 /DNDEBUG -MD",
 				"role" : "flags"
 			},
 			{
-				"fragment" : "/machine:x64 /debug /INCREMENTAL /subsystem:console",
+				"fragment" : "/machine:x64 /INCREMENTAL:NO /subsystem:console",
 				"role" : "flags"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "SDL\\Debug\\SDL3.lib",
+				"fragment" : "SDL\\MinSizeRel\\SDL3.lib",
 				"role" : "libraries"
 			},
 			{
@@ -144,7 +146,9 @@
 			[
 				0,
 				1,
-				2
+				2,
+				3,
+				4
 			]
 		}
 	],
@@ -159,7 +163,19 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
+			"path" : "src/Chip8.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
 			"path" : "src/Logger.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/RomLoader.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{

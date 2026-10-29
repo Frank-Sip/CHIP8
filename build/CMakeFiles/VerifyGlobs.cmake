@@ -1465,7 +1465,9 @@ endif()
 # SOURCES at CMakeLists.txt:12 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "F:/GitHub/Repositories/CHIP8/src/*.cpp")
 set(OLD_GLOB
+  "F:/GitHub/Repositories/CHIP8/src/Chip8.cpp"
   "F:/GitHub/Repositories/CHIP8/src/Logger.cpp"
+  "F:/GitHub/Repositories/CHIP8/src/RomLoader.cpp"
   "F:/GitHub/Repositories/CHIP8/src/cmdLineParser.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")

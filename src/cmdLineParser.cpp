@@ -63,7 +63,7 @@ void CMDLineParser::Parse(int argc, char** argv)
 
 bool CMDLineParser::IsRomFileNameSet()
 {
-    return !(m_romFileName == "");
+    return !m_romFileName .empty();
 }
 
 std::string CMDLineParser::GetRomFileName()

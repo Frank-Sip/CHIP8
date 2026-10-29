@@ -1,0 +1,75 @@
+#ifndef CHIP8_H
+#define CHIP8_H
+
+#include <cstdint>
+#include "Logger.h"
+#include "RomLoader.h"
+
+#define NUM_KEYS 16
+#define TOTAL_RAM 4096
+#define STACK_SIZE 16
+#define FONTSET_SIZE 80
+#define TIMER_MAX 255
+
+#define CHIP8_RAM_START_ADDRESS 0x000
+#define CHIP8_RAM_END_ADDRESS 0x1FF
+#define PROGRAM_START_ADDRESS 0x200
+#define PROGRAM_END_ADDRESS 0xFFF
+
+#define SCREEN_WIDTH 64
+#define SCREEN_HEIGHT 32
+
+const static uint8_t FONTSET[] =
+{
+    0xF0, 0x90, 0x90, 0x90, 0xF0, // 0
+    0x20, 0x60, 0x20, 0x20, 0x70, // 1
+    0xF0, 0x10, 0xF0, 0x80, 0xF0, // 2
+    0xF0, 0x10, 0xF0, 0x10, 0xF0, // 3
+    0x90, 0x90, 0xF0, 0x10, 0x10, // 4
+    0xF0, 0x80, 0xF0, 0x10, 0xF0, // 5
+    0xF0, 0x80, 0xF0, 0x90, 0xF0, // 6
+    0xF0, 0x10, 0x20, 0x40, 0x40, // 7
+    0xF0, 0x90, 0xF0, 0x90, 0xF0, // 8
+    0xF0, 0x90, 0xF0, 0x10, 0xF0, // 9
+    0xF0, 0x90, 0xF0, 0x90, 0x90, // A
+    0xE0, 0x90, 0xE0, 0x90, 0xE0, // B
+    0xF0, 0x80, 0x80, 0x80, 0xF0, // C
+    0xE0, 0x90, 0x90, 0x90, 0xE0, // D
+    0xF0, 0x80, 0xF0, 0x80, 0xF0, // E
+    0xF0, 0x80, 0xF0, 0x80, 0x80  // F
+};
+
+class CPU;
+
+class Chip8
+{
+    friend class CPU;
+
+    //Screen
+    uint8_t m_screen[SCREEN_HEIGHT][SCREEN_WIDTH];
+
+    //Keyboard
+    uint8_t m_keys[NUM_KEYS];
+    bool m_keyPressed;
+
+    //Memory
+    uint8_t m_ram[TOTAL_RAM];
+    uint16_t m_stack[STACK_SIZE];
+
+    uint8_t m_delay_timer;
+    uint8_t m_sound_timer;
+
+    bool m_emulatorRunning;
+    std::shared_ptr<Logger> m_logger;
+    RomLoader* m_loader;
+
+public:
+    Chip8();
+    ~Chip8();
+
+    void Init(std::string rom_path);
+    void Run();
+    void Deinit();
+};
+
+#endif
