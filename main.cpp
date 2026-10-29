@@ -1,9 +1,7 @@
-#include <SDL3/SDL.h>
-#include <iostream>
-
 #include "cmdLineParser.h"
 #include "Chip8.h"
 #include "SDLDisplay.h"
+#include "KeyboardSDL.h"
 
 int main(int argc, char** argv)
 {
@@ -34,45 +32,13 @@ int main(int argc, char** argv)
     
     DisplaySDL display;
     Chip8 emulator;
+
     emulator.SetDisplay(&display);
+    KeyboardSDL keyboard;
+    emulator.SetKeyboard(&keyboard);
     emulator.Init(parser.GetRomFileName());
     emulator.Run();
     emulator.Deinit();
-
-    if (!SDL_Init(SDL_INIT_VIDEO))
-    {
-        logger->Log("SDL initialization failed: " + std::string(SDL_GetError()), ELogLevel::ERROR);
-        return 1;
-    }
-    
-    SDL_Window* window = SDL_CreateWindow("CHIP-8 Emulator", 640, 320, 0);
-
-    if (!window)
-    {
-        logger->Log("Window creation failed: " + std::string(SDL_GetError()), ELogLevel::ERROR);
-        SDL_Quit();
-        return 1;
-    }
-   
-    bool running = true;
-
-    while (running)
-    {
-        SDL_Event event;
-
-        while (SDL_PollEvent(&event))
-        {
-            if (event.type == SDL_EVENT_QUIT)
-            {
-                running = false;
-            }
-        }
-
-        SDL_Delay(16);
-    }
-    
-    SDL_DestroyWindow(window);
-    SDL_Quit();
 
     return 0;
 }

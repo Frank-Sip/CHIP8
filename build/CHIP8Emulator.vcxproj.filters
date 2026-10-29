@@ -10,6 +10,9 @@
     <ClCompile Include="F:\GitHub\Repositories\CHIP8\src\Chip8.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="F:\GitHub\Repositories\CHIP8\src\KeyboardSDL.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="F:\GitHub\Repositories\CHIP8\src\Logger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

@@ -11,6 +11,7 @@ Chip8::Chip8()
     m_cpu = new CPU(this);
     m_emulatorRunning = true;
     m_display = nullptr;
+    m_keyboard = nullptr;
 }
 
 Chip8::~Chip8() {}
@@ -59,6 +60,7 @@ void Chip8::Init(std::string rom_path)
     delete m_loader;
 
     m_display->Init();
+    m_keyboard->Init();
 }
 
 void Chip8::Run()
@@ -73,6 +75,7 @@ void Chip8::Run()
     {
         start = clock::now();
         
+        m_keyboard->Update(m_keys, &m_emulatorRunning);
         m_cpu->Fetch();
         m_cpu->Decode();
         m_cpu->Execute();
@@ -112,9 +115,15 @@ void Chip8::Deinit()
 {
     m_cpu->Init();
     m_display->Deinit();
+    m_keyboard->Deinit();
 }
 
 void Chip8::SetDisplay(Display* display)
 {
     m_display = display;
+}
+
+void Chip8::SetKeyboard(Keyboard* keyboard)
+{
+    m_keyboard = keyboard;
 }

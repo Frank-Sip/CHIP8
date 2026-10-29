@@ -1467,6 +1467,7 @@ file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "F:/GitHub/Repositories/CHIP8/
 set(OLD_GLOB
   "F:/GitHub/Repositories/CHIP8/src/CPU.cpp"
   "F:/GitHub/Repositories/CHIP8/src/Chip8.cpp"
+  "F:/GitHub/Repositories/CHIP8/src/KeyboardSDL.cpp"
   "F:/GitHub/Repositories/CHIP8/src/Logger.cpp"
   "F:/GitHub/Repositories/CHIP8/src/RomLoader.cpp"
   "F:/GitHub/Repositories/CHIP8/src/SDLDisplay.cpp"

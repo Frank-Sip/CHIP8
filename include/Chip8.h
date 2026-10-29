@@ -6,6 +6,7 @@
 #include "Logger.h"
 #include "RomLoader.h"
 #include "Display.h"
+#include "Keyboard.h"
 
 #define NUM_KEYS 16
 #define TOTAL_RAM 4096
@@ -66,6 +67,7 @@ class Chip8
     std::shared_ptr<Logger> m_logger;
     RomLoader* m_loader;
     Display* m_display;
+    Keyboard* m_keyboard;
 
 public:
     Chip8();
@@ -76,6 +78,7 @@ public:
     void Deinit();
 
     void SetDisplay(Display* display);
+    void SetKeyboard(Keyboard* keyboard);
 };
 
 #endif
