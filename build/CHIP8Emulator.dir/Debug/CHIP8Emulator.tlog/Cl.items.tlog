@@ -5,4 +5,5 @@ F:\GitHub\Repositories\CHIP8\src\KeyboardSDL.cpp;F:\GitHub\Repositories\CHIP8\bu
 F:\GitHub\Repositories\CHIP8\src\Logger.cpp;F:\GitHub\Repositories\CHIP8\build\CHIP8Emulator.dir\Debug\Logger.obj
 F:\GitHub\Repositories\CHIP8\src\RomLoader.cpp;F:\GitHub\Repositories\CHIP8\build\CHIP8Emulator.dir\Debug\RomLoader.obj
 F:\GitHub\Repositories\CHIP8\src\SDLDisplay.cpp;F:\GitHub\Repositories\CHIP8\build\CHIP8Emulator.dir\Debug\SDLDisplay.obj
+F:\GitHub\Repositories\CHIP8\src\SoundSDL.cpp;F:\GitHub\Repositories\CHIP8\build\CHIP8Emulator.dir\Debug\SoundSDL.obj
 F:\GitHub\Repositories\CHIP8\src\cmdLineParser.cpp;F:\GitHub\Repositories\CHIP8\build\CHIP8Emulator.dir\Debug\cmdLineParser.obj

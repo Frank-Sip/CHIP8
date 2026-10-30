@@ -7,6 +7,8 @@
 #include "RomLoader.h"
 #include "Display.h"
 #include "Keyboard.h"
+#include "RomLoader.h"
+#include "Sound.h"
 
 #define NUM_KEYS 16
 #define TOTAL_RAM 4096
@@ -68,6 +70,7 @@ class Chip8
     RomLoader* m_loader;
     Display* m_display;
     Keyboard* m_keyboard;
+    Sound* m_sound;
 
 public:
     Chip8();
@@ -79,6 +82,7 @@ public:
 
     void SetDisplay(Display* display);
     void SetKeyboard(Keyboard* keyboard);
+    void SetSound(Sound* sound);
 };
 
 #endif

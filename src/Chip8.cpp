@@ -12,6 +12,7 @@ Chip8::Chip8()
     m_emulatorRunning = true;
     m_display = nullptr;
     m_keyboard = nullptr;
+    m_sound = nullptr;
 }
 
 Chip8::~Chip8() {}
@@ -61,6 +62,7 @@ void Chip8::Init(std::string rom_path)
 
     m_display->Init();
     m_keyboard->Init();
+    m_sound->Init();
 }
 
 void Chip8::Run()
@@ -93,7 +95,12 @@ void Chip8::Run()
 
             if (m_sound_timer > 0)
             {
+                m_sound->PlayTune();
                 m_sound_timer--;
+            }
+            else
+            {
+                m_sound->PauseTune();
             }
         }
 
@@ -113,9 +120,10 @@ void Chip8::Run()
 }
 void Chip8::Deinit()
 {
-    m_cpu->Init();
+    m_cpu->Deinit();
     m_display->Deinit();
     m_keyboard->Deinit();
+    m_sound->Deinit();
 }
 
 void Chip8::SetDisplay(Display* display)
@@ -126,4 +134,9 @@ void Chip8::SetDisplay(Display* display)
 void Chip8::SetKeyboard(Keyboard* keyboard)
 {
     m_keyboard = keyboard;
+}
+
+void Chip8::SetSound(Sound* sound)
+{
+    m_sound = sound;
 }

@@ -379,6 +379,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="F:\GitHub\Repositories\CHIP8\src\Logger.cpp" />
     <ClCompile Include="F:\GitHub\Repositories\CHIP8\src\RomLoader.cpp" />
     <ClCompile Include="F:\GitHub\Repositories\CHIP8\src\SDLDisplay.cpp" />
+    <ClCompile Include="F:\GitHub\Repositories\CHIP8\src\SoundSDL.cpp" />
     <ClCompile Include="F:\GitHub\Repositories\CHIP8\src\cmdLineParser.cpp" />
   </ItemGroup>
   <ItemGroup />

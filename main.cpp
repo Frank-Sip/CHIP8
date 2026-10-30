@@ -2,6 +2,7 @@
 #include "Chip8.h"
 #include "SDLDisplay.h"
 #include "KeyboardSDL.h"
+#include "SoundSDL.h"
 
 int main(int argc, char** argv)
 {
@@ -36,6 +37,8 @@ int main(int argc, char** argv)
     emulator.SetDisplay(&display);
     KeyboardSDL keyboard;
     emulator.SetKeyboard(&keyboard);
+    SoundSDL sound;
+    emulator.SetSound(&sound);
     emulator.Init(parser.GetRomFileName());
     emulator.Run();
     emulator.Deinit();
