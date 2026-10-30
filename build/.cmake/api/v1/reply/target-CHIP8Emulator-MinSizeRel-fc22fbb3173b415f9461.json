@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Release/CHIP8Emulator.exe"
+			"path" : "MinSizeRel/CHIP8Emulator.exe"
 		},
 		{
-			"path" : "Release/CHIP8Emulator.pdb"
+			"path" : "MinSizeRel/CHIP8Emulator.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -59,7 +59,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++20 -MD"
+					"fragment" : "/DWIN32 /D_WINDOWS /EHsc /O1 /Ob1 /DNDEBUG -std:c++20 -MD"
 				}
 			],
 			"includes" : 
@@ -103,11 +103,11 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 3,
-			"id" : "SDL3-shared::@e7c329919722962a2ad4"
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
 		},
 		{
-			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+			"backtrace" : 3,
+			"id" : "SDL3-shared::@e7c329919722962a2ad4"
 		}
 	],
 	"id" : "CHIP8Emulator::@6890427a1f51a3e7e1df",
@@ -116,7 +116,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "/DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -MD",
+				"fragment" : "/DWIN32 /D_WINDOWS /EHsc /O1 /Ob1 /DNDEBUG -MD",
 				"role" : "flags"
 			},
 			{
@@ -125,7 +125,7 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "SDL\\Release\\SDL3.lib",
+				"fragment" : "SDL\\MinSizeRel\\SDL3.lib",
 				"role" : "libraries"
 			},
 			{

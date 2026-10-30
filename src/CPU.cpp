@@ -414,15 +414,17 @@ void CPU::store_binary_code_decimal_representation()
 
     m_machine->m_ram[m_ireg] = m_reg[reg] / 100;
     m_machine->m_ram[m_ireg+1] = (m_reg[reg] / 10) % 10;
-    m_machine->m_ram[m_ireg+1] = (m_reg[reg] % 100) % 10;
+    m_machine->m_ram[m_ireg+2] = (m_reg[reg] % 100) % 10;
 }
 
 void CPU::load_memory_from_regs()
 {
     uint8_t reg = (m_current_op >> 8) & 0x0F;
 
-    for(int i=0; i<=reg; i++)
+    for (int i = 0; i <= reg; i++)
+    {
         m_machine->m_ram[m_ireg + i] = m_reg[i];
+    }
 
     m_ireg += (reg + 1);
 }
