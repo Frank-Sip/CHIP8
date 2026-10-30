@@ -15,11 +15,7 @@ constexpr double FREQUENCY = 440.0;
 constexpr int CALLBACK_BUFFER_SAMPLES = 256;
 }
 
-void SDLCALL AudioCallback(
-    void* userdata,
-    SDL_AudioStream* stream,
-    int additionalAmount,
-    int totalAmount)
+void SDLCALL AudioCallback(void* userdata, SDL_AudioStream* stream, int additionalAmount, int totalAmount)
 {
     (void)userdata;
     (void)totalAmount;

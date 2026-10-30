@@ -54,6 +54,9 @@ void Chip8::Init(std::string rom_path)
 
     m_keyPressed = false;
 
+    m_delay_timer = 0;
+    m_sound_timer = 0;
+
     m_cpu->Init();
 
     m_loader = new RomLoader();
