@@ -3,12 +3,7 @@
 #include <cstdlib>
 #include <string>
 
-DisplaySDL::DisplaySDL()
-    : m_window(nullptr),
-      m_surface(nullptr),
-      m_logger(Logger::GetInstance())
-{
-}
+DisplaySDL::DisplaySDL() : m_window(nullptr), m_surface(nullptr), m_logger(Logger::GetInstance()) {}
 
 DisplaySDL::~DisplaySDL() = default;
 
